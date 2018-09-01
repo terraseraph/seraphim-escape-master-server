@@ -11,3 +11,6 @@ The options when on the UI are: Game Overview, Settings, Gamescript, and some of
 `npm install`
 
 `node ./app.js`
+
+
+open browser to localhost:5001
