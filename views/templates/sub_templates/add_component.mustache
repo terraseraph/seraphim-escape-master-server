@@ -1,0 +1,56 @@
+		<div class="col-md-4">
+		    <h3>Add puzzle</h3>
+		    <form role='form'>
+	
+		    	<div class="form-group">
+					<label for="create_component_name">
+						Puzzle name
+					</label>
+					<input type='text' class="form-control" id="create_component_name" />
+				</div>
+				
+				<div class='form-group'>
+				    <label for='create_component_select_arduino'>
+				        Select arduino
+				    </label>
+				    <select id='create_component_select_arduino'>
+                        {{!--script.js creates the elements for here--}}
+                    </select>
+				</div>
+				
+				<div class="form-group">
+					<label for="create_component_action_or_event">
+						Action or event (maybe radio buttons)
+					</label>
+					action or event?
+					<input type='text' class="form-control" id="create_component_action_or_event" />
+				</div>
+				
+				if action list action types, same for events
+				<div class="form-group">
+					<label for="create_component_action_event_type">
+						Component action/event type (ie code, toggle...)
+					</label>
+					<input type='text' class="form-control" id="create_component_action_event_type" />
+				</div>
+				
+				<div class="form-group">
+					<label for="create_component_action_event">
+						Component action/event (ie button, buzzer, relay)
+					</label>
+					<input type='text' class="form-control" id="create_component_action_event" />
+				</div>
+				
+				<div class="form-group">
+					<label for="create_component_data">
+						data (ie code, button number...)
+					</label>
+					<input type='text' class="form-control" id="create_component_data" />
+				</div>
+				
+				
+				
+				<button class='btn btn-default' onclick="create_component_save()">Save</button>
+				
+			</form>
+		</div>

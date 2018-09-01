@@ -1,0 +1,44 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							#
+						</th>
+						<th>
+							Device
+						</th>
+						<th>
+							Status
+						</th>
+						<th>
+							Room
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+
+{{#device}}
+<tr>
+	<td>
+		{{id}}
+	</td>
+	<td>
+		{{name}}
+	</td>
+	<td>
+		{{status}}
+	</td>
+	<td>
+		{{room_name}}
+	</td>
+</tr>
+{{/device}}
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

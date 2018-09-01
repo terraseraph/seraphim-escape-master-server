@@ -1,0 +1,164 @@
+<img src='' onerror='go_check_game_state({{game_state}})'
+<div class='container-fluid'>
+	<div class='row'>
+		<div class='col-md-3'>
+			<button id='start_game_timer' type="button" class="btn btn-success" onclick='gs_start_game()'>
+				Start Game
+			</button>
+			<button id='start_game_timer' type="button" class="btn btn-danger" onclick='gc_end_game()'>
+				End Game
+			</button>
+			<div class="form-group">
+					<label for="timer_duration">
+						Timer duration
+					</label>
+                    {{! name of event/action }}
+					<input type='text' class="form-control" id="timer_duration_hours" value='1' placeholder='Hours'/>
+					<input type='text' class="form-control" id="timer_duration_minutes" placeholder= 'minutes'/>
+					<input type='text' class="form-control" id="timer_duration_seconds" placeholder = 'seconds'/>
+			</div>
+			<hr>
+			<button id='start_game_timer' type="button" class="btn btn-success-outline" onclick='gc_start_custom_timer()'>
+				Start Game timer
+			</button>
+			<button id='stop_game_timer' type="button" class="btn btn-danger-outline" onclick='gc_stop_timer()'>
+				Stop Game Timer
+			</button>
+			<hr>
+			<button 'send_game_message' type="button" class="btn btn-default" onclick='send_game_message()'>
+				Send message
+			</button>
+			<button 'clear_game_message' type="button" class="btn btn-default" onclick='clear_game_message()'>
+				Clear message
+			</button>			
+			<div class="form-group">
+					<label for="message_input">
+						Message
+					</label>
+                    {{! name of event/action }}
+					<input type='text' class="form-control" id="message_input" value='' placeholder='Hint...'/>
+			</div>
+		</div>
+		<div class='col-md-3'>
+			<div id='overview_timer'>
+			{{time}}
+			</div>
+			<div id='overview_message'>
+			{{message}}
+			</div>
+			<button 'send_game_message' type="button" class="btn btn-default" onclick='gc_play_main_audio()'>
+				Play main audio
+			</button>
+			<button 'clear_game_message' type="button" class="btn btn-default" onclick='gc_play_congrats_audio()'>
+				Play congrats audio
+			</button>
+			<button 'clear_game_message' type="button" class="btn btn-default" onclick='gc_play_hint_audio()'>
+				Play Hint audio
+			</button>
+		</div>
+		<div class='col-md-3'>
+			<div class="form-group">
+				<label for="team_details">
+					Team Details
+				</label>
+				<input type='text' class="form-control" id="team_details_team_name" placeholder='Team Name'/>
+				<input type='text' class="form-control" id="team_details_members" placeholder= '# of Members'/>
+				<input type='text' class="form-control" id="team_details_email" placeholder = 'contact email'/>
+			</div>
+			<button type="button" class="btn btn-default" onclick='go_save_team_details()'>
+				Save Team Details
+			</button>
+		</div>
+		<div class='col-md-3'>
+			<button 'reload_game_screen' type="button" class="btn btn-warning" onclick='gc_refresh_window()'>
+				Reload Game Screen
+			</button>		
+		</div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							#
+						</th>
+						<th>
+							Puzzle name
+						</th>
+						<th>
+							device id
+						</th>
+						<th>
+							event
+						</th>
+						<th>
+							status (on/off) 
+						</th>
+						<th>
+							dependencies met 
+						</th>
+						<th>
+							Time
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					{{#events}}
+					<tr>
+						<td>
+							{{event_id}}
+						</td>
+						<td>
+							<a data-toggle="collapse" href="#actions_{{event_id}}">{{name}}</a>
+						</td>
+						<td>
+							{{device_id}}
+						</td>
+						<td>
+							<button class='btn btn-span' onclick="send_device_event('{{name}}')">Trigger Event</button>
+						</td>
+						<td id='event_status_{{event_id}}' class='evt_status'>
+							{{status}}
+							INCOMPLETE
+						</td>
+						<td>
+							{{dependencies}}
+						</td>
+						<td id='time_completed_{{event_id}}'>
+							-- --
+						</td>
+					</tr>
+					<tr>
+						<td id="actions_{{event_id}}" class="panel-collapse collapse">
+						<table class='table'>
+							<thead>
+							<tr>
+							<th>Name</th>
+							<th>device id</th>
+							<th>action type</th>
+							<th>trigger</th>
+							</tr>
+							</thead>
+							<tbody>
+						  	{{#act_arr}}
+						  	<tr>
+								<td>{{name}}</td>
+					  			<td>{{device_id}}</td>
+					  			<td>{{action_type}}</td>
+					  			<td><button class='btn btn-span' onclick="send_device_action('{{masterId}}','{{device_id}}', '{{action}}', '{{actionType}}', '{{event}}', '{{eventType}}', '{{data}}', '{{name}}')">Trigger Action{{trigger}}</button></td>
+					  		</tr>
+					  		{{/act_arr}}
+					  		</tbody>
+					  	</table>
+					  	</td>
+					</tr>
+					{{/events}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+

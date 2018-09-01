@@ -1,0 +1,33 @@
+			<div class="row">
+				<div class="col-md-2">
+					<ul class='list-unstyled'>
+						<li>
+							<button onclick="menu_load('home')" class='btn btn-block span'>Home</button>
+						</li>
+						<li>
+							<button onclick="menu_load('settings')" class='btn  btn-block span'>Settings</button>
+						</li>
+						<li>
+							<button onclick="menu_load('message_log')" class='btn span btn-block'>Message Log</button>
+						</li>
+						<li>
+							<button onclick="menu_load('game_overview')" class='btn span btn-block'>Game Overview</button>
+						</li>
+						<li>
+							<button onclick="menu_load('configure_games')" class='btn span btn-block'>Configure games</button>
+						</li>
+						<li>
+							<button onclick="menu_load('game_script')" class='btn span btn-block'>Game Script</button>
+						</li>
+						<li>
+							<button onclick="menu_load('sc_get_team_stats')" class='btn span btn-block'>Team History</button>
+						</li>
+						<li>
+							<a data-toggle="collapse" href="#db_updates">UPDATES:</a>
+							<div id='db_updates' class="panel-collapse collapse"></div>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-10">
+      		<div class="row">
+      		    {{!--content here--}}

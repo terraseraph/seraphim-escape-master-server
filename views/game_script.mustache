@@ -1,0 +1,26 @@
+{{! <img src='' onerror='get_rooms_from_game_script()'> }}
+
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-2">
+			<div id='room_list'>
+			<h3>Rooms:</h3>
+				{{#rooms}}
+					<button class='btn btn-block' id='room'{{id}} onclick="get_event_action_from_game_script('{{name}}')" value='{{name}}'>{{name}}</button>
+					</br>
+				{{/rooms}}
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div id='device_list'>
+				{{!--when room selected list devices here--}}
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div id="device_details">
+		    	when device selected list device settings
+			</div>
+		</div>
+	</div>
+</div>

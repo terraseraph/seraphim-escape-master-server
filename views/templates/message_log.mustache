@@ -1,0 +1,74 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							#
+						</th>
+						<th>
+							fromId
+						</th>
+						<th>
+							toId
+						</th>
+						<th>
+							action
+						</th>
+						<th>
+							actionType
+						</th>
+						<th>
+							event
+						</th>
+						<th>
+							eventType
+						</th>
+						<th>
+							data
+						</th>
+						<th>
+							time
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+
+{{#message_log}}
+<tr>
+	<td>
+		{{id}}
+	</td>
+	<td>
+		{{fromId}}
+	</td>
+	<td>
+		{{toId}}
+	</td>
+	<td>
+		{{action}}
+	</td>
+	<td>
+		{{actionType}}
+	</td>
+	<td>
+		{{event}}
+	</td>
+	<td>
+		{{eventType}}
+	</td>
+	<td>
+		{{data}}
+	</td>
+	<td>
+		{{time}}
+	</td>
+</tr>
+{{/message_log}}
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

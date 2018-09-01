@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+    {{! <script src='http://use.edgefonts.net/butcherman.js'></script> }}
+
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/javascripts/FlipClock-master/compiled/flipclock.css">
+    <link href="/stylesheets/bootstrap.min.css"
+          rel="stylesheet">
+	<script src = "/socket.io/socket.io.js"></script>
+    <script src="/javascripts/easytimer.min.js"></script>
+	<script src="/javascripts/jquery-1.11.1.js"></script>
+    <script src='/javascripts/game_timer.js'></script>
+	<script src='/javascripts/socketScript.js'></script>
+	<script src='/javascripts/script.js'></script>
+    
+</head>
+
+<body>
+    <script src="/javascripts/FlipClock-master/compiled/flipclock.min.js"></script>
+
+    <div id='videoBg'>
+        <video autoplay muted loop id="static_video" src="/files/video/static_small.mp4" type="video/mp4">
+            {{! <source src="/files/video/static_small.mp4" type="video/mp4"> }}
+        </video>
+        {{! <video id="intro_video" autoplay muted src="/files/video/intro.mp4" type="video/mp4"> }}
+            {{! <source src="/files/intro.mp4" type="video/mp4"> }}
+        {{! </video> }}
+    </div>
+
+    {{! ===============================easytimer }}
+
+
+<div id="chronoExample">
+    {{! <div class="values">00:00:00</div> }}
+    <div>
+        <button class="startButton">Start</button>
+        <button class="stopButton">Stop</button>
+        <button class="resetButton">Reset</button>
+    </div>
+</div>
+
+<div id="countdownExample">
+    <div id='cdTime' class="values"></div>
+</div>
+<div id=cdMessage></div>
+
+{{! ======================================easy timer }}
+
+    <!-- Optional: some overlay text to describe the video -->
+    <div class="content">
+	<div class="message"></div>
+    <button class="start">Start Clock</button>
+    <button class="stop">Stop Clock</button>
+    <!-- Use a button to pause/play the video with JavaScript -->
+    <button id="myBtn" onclick="myFunction()">Pause</button>
+    </div>
+
+	<div class="clock" style="margin:2em;"></div>
+
+	
+
+<script src="/javascripts/bootstrap.min.js"></script>
+</body>
+
+</html>

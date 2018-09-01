@@ -1,0 +1,39 @@
+		<div class="col-md-4">
+		    <h3>Add puzzle</h3>
+		    <form role='form'>
+	
+		    	<div class="form-group">
+					<label for="create_puzzle_name">
+						Puzzle name
+					</label>
+					<input type='text' class="form-control" id="create_puzzle_name" />
+				</div>
+				
+				<div class="form-group">
+					<label for="create_puzzle_type">
+						Puzzle type
+					</label>
+					<input type='text' class="form-control" id="create_puzzle_type" />
+				</div>
+				
+				<div class="form-group">
+					<label for="create_puzzle_location">
+						Puzzle location
+					</label>
+					<input type='text' class="form-control" id="create_puzzle_location" />
+				</div>
+				
+				
+				<div class='form-group'>
+				    <label for='create_puzzle_select_room'>
+				        Select room
+				    </label>
+				    <select id='create_puzzle_select_room'>
+                        {{!--script.js creates the elements for here--}}
+                    </select>
+				</div>
+				
+				<button class='btn btn-default' onclick="create_puzzle_save()">Save</button>
+				
+			</form>
+		</div>

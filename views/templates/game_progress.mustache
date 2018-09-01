@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    {{#game_progress}}
+	<div class="row">
+		<div class="col-md-12">
+		    <div id='status_{{room_name}}'>
+		        <h1>{{room_name}}</h1>
+		        {{#device_status}}
+		            <p>{{puzzle}}</p>
+		            <p>{{status}}</p>
+		            <p>{{time}}</p>
+		        {{/device_status}}
+		    </div>
+        </div>
+    </div>
+    {{/game_progress}}
+</div>

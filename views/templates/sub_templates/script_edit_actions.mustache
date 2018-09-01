@@ -1,0 +1,90 @@
+{{! <img src='' onerror='create_puzzle_select_room()'> }}
+{{! <img src='' onerror='get_all_devices()'> }}
+{{#data}}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+		    <h3>Edit Action</h3>
+                <div class="form-group">
+					<label for="gs_event_action_name">
+						Name
+					</label>
+                    {{! name of event/action }}
+					<input type='text' class="form-control" id="gs_event_action_name" value='{{name}}'/>
+				</div>
+
+                <div class="form-group">
+					<label for="gs_action_type_action">
+						Action Type / Action
+					</label>
+                    {{! Make this populated from sql, or js when selecting action or event up the top}}
+					<select class="selectpicker form-control" id='gs_action_type_action'>
+						<option selected='selected'>{{actionType}}/{{action}}</option>
+						<option>relay/start</option>
+						<option>relay/stop</option>
+						<option>relay/toggleA</option>
+						<option>mp3/play</option>
+						<option>mp3/stop</option>
+						<option>mp3/volume</option>
+						<option>buzzer/toggle</option>
+						<option>distanceSensor/configureRange</option>
+						<option>phoneAT/inCommingCall</option>
+						<option>phoneAT/outGoingCall</option>
+					</select>
+
+				</div>
+
+                <div class="form-group">
+					<label for="gs_device_id">
+						Device Id
+					</label>
+                    {{! change to device name in a select thingy }}
+					<input type='text' class="form-control" id="gs_device_id" value='{{device_id}}'/>
+				</div>
+
+                <div class="form-group">
+					<label for="gs_data">
+						Data
+					</label>
+                    {{! Data to send to the device on action, or get from event }}
+					<input type='text' class="form-control" id="gs_data" value='{{data}}'/>
+				</div>
+
+                <div class="form-group">
+					<label for="gs_description">
+						Description
+					</label>
+                    {{! populated from the game_script json's }}
+					<input type='text' class="form-control" id="gs_description"  value='{{description}}'/>
+				</div>
+
+                <div class="form-group">
+					<label for="gs_dependencies">
+						Dependencies (Game states)
+					</label>
+                    {{! populated from the game_script json's }}
+					<input type='text' class="form-control" id="gs_dependencies"  value='{{dependencies}}'/>
+				</div>
+
+                <div class="form-group">
+					<label for="gs_state">
+						Game state (When triggered)
+					</label>
+                    {{! Game state to update on the event }}
+					<input type='text' class="form-control" id="gs_state"  value='{{state}}'/>
+				</div>
+
+                <div class="form-group">
+					<label for="gs_actions">
+						Actions (When triggered)
+					</label>
+                    {{! Actions to do when event triggered }}
+					<input type='text' class="form-control" id="gs_actions"  value='{{actions}}'/>
+				</div>
+
+				<button class="btn btn-default" onclick="edit_game_script('actions', '{{id}}')">
+					Save
+				</button>
+	</div>
+</div>
+{{/data}}
